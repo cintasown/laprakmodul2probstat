@@ -1,0 +1,5 @@
+import pandas as pd
+
+df = pd.DataFrame(result, columns=[desc[0] for desc in cursor.description])
+df_filtered = df[df['Gender'] == 'P']
+print(df_filtered)
