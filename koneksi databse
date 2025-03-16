@@ -1,0 +1,23 @@
+import mysql.connector
+connection=mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="houseprices"
+)
+
+cursor=connection.cursor()
+
+try:
+    my_query="SELECT * FROM `fileprakkmodul2___houseprices`"
+    cursor.execute(my_query)
+
+    result=cursor.fetchall()
+
+    print("\nHasil Kueri:")
+    for row in result:
+        print(row)
+
+finally:
+    cursor.close()
+    connection.close()
